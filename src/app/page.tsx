@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 
 export default function HomePage() {
@@ -23,9 +22,9 @@ export default function HomePage() {
                   Get Started
                 </Button>
               </Link>
-              <Link href="/features">
+              <Link href="/auth/signin">
                 <Button variant="outline" size="lg">
-                  View Features
+                  Sign In
                 </Button>
               </Link>
             </div>
@@ -46,119 +45,119 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
+            <div className="rounded-lg border bg-white shadow-sm dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50">
+              <div className="flex flex-col space-y-1.5 p-6">
+                <h3 className="text-2xl font-semibold leading-none tracking-tight flex items-center">
                   🔐 Authentication
-                </CardTitle>
-                <CardDescription>
+                </h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
                   Secure user authentication with NextAuth.js, supporting multiple providers
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
+                </p>
+              </div>
+              <div className="p-6 pt-0">
                 <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-2">
                   <li>• Email/Password signup</li>
                   <li>• Google OAuth integration</li>
                   <li>• Session management</li>
                   <li>• Protected routes</li>
                 </ul>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
+            <div className="rounded-lg border bg-white shadow-sm dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50">
+              <div className="flex flex-col space-y-1.5 p-6">
+                <h3 className="text-2xl font-semibold leading-none tracking-tight flex items-center">
                   🗄️ Database
-                </CardTitle>
-                <CardDescription>
+                </h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
                   Neon PostgreSQL with Drizzle ORM for type-safe database operations
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
+                </p>
+              </div>
+              <div className="p-6 pt-0">
                 <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-2">
                   <li>• Migration system</li>
                   <li>• Type-safe queries</li>
                   <li>• Automatic schema sync</li>
                   <li>• Database studio</li>
                 </ul>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
+            <div className="rounded-lg border bg-white shadow-sm dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50">
+              <div className="flex flex-col space-y-1.5 p-6">
+                <h3 className="text-2xl font-semibold leading-none tracking-tight flex items-center">
                   ✅ Validation
-                </CardTitle>
-                <CardDescription>
+                </h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
                   Robust input validation with Zod for secure API endpoints
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
+                </p>
+              </div>
+              <div className="p-6 pt-0">
                 <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-2">
                   <li>• Runtime type checking</li>
                   <li>• Input sanitization</li>
                   <li>• Error handling</li>
                   <li>• Type safety</li>
                 </ul>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
+            <div className="rounded-lg border bg-white shadow-sm dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50">
+              <div className="flex flex-col space-y-1.5 p-6">
+                <h3 className="text-2xl font-semibold leading-none tracking-tight flex items-center">
                   🎨 Modern UI
-                </CardTitle>
-                <CardDescription>
+                </h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
                   Beautiful, responsive interface built with Tailwind CSS
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
+                </p>
+              </div>
+              <div className="p-6 pt-0">
                 <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-2">
                   <li>• Responsive design</li>
                   <li>• Dark mode support</li>
                   <li>• Component library</li>
                   <li>• Accessibility first</li>
                 </ul>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
+            <div className="rounded-lg border bg-white shadow-sm dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50">
+              <div className="flex flex-col space-y-1.5 p-6">
+                <h3 className="text-2xl font-semibold leading-none tracking-tight flex items-center">
                   🚀 Deployment
-                </CardTitle>
-                <CardDescription>
+                </h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
                   Ready for production deployment with Vercel and GitHub integration
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
+                </p>
+              </div>
+              <div className="p-6 pt-0">
                 <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-2">
                   <li>• GitHub integration</li>
                   <li>• Auto deployments</li>
                   <li>• Environment variables</li>
                   <li>• SSL certificates</li>
                 </ul>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
+            <div className="rounded-lg border bg-white shadow-sm dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50">
+              <div className="flex flex-col space-y-1.5 p-6">
+                <h3 className="text-2xl font-semibold leading-none tracking-tight flex items-center">
                   🔧 Developer Tools
-                </CardTitle>
-                <CardDescription>
+                </h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
                   Complete development experience with TypeScript and modern tooling
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
+                </p>
+              </div>
+              <div className="p-6 pt-0">
                 <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-2">
                   <li>• TypeScript support</li>
                   <li>• ESLint & Prettier</li>
                   <li>• Hot reload</li>
                   <li>• API routes</li>
                 </ul>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
