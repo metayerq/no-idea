@@ -3,6 +3,7 @@ import { db } from '@/lib/db';
 import { users } from '@/lib/schema';
 import { createUserSchema } from '@/lib/validations/user';
 import { validateRequest, createValidationErrorResponse } from '@/lib/validation';
+import { randomUUID } from 'crypto';
 
 export async function GET() {
   try {
@@ -34,6 +35,7 @@ export async function POST(request: NextRequest) {
 
   try {
     const newUser = await db.insert(users).values({
+      id: randomUUID(),
       name: validation.data.name,
       email: validation.data.email,
     }).returning();
