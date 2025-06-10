@@ -1,4 +1,4 @@
-import { pgTable, serial, text, timestamp, boolean, integer, primaryKey } from 'drizzle-orm/pg-core';
+import { pgTable, text, timestamp, boolean, integer, primaryKey } from 'drizzle-orm/pg-core';
 import type { AdapterAccount } from '@auth/core/adapters';
 
 // Users table with authentication fields

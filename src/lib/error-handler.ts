@@ -4,19 +4,19 @@ export interface ApiError {
   success: false;
   error: string;
   code?: string;
-  details?: any;
+  details?: unknown;
 }
 
 export class AppError extends Error {
   public readonly statusCode: number;
   public readonly code?: string;
-  public readonly details?: any;
+  public readonly details?: unknown;
 
   constructor(
     message: string,
     statusCode: number = 500,
     code?: string,
-    details?: any
+    details?: unknown
   ) {
     super(message);
     this.statusCode = statusCode;

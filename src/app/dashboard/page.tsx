@@ -178,7 +178,7 @@ export default function DashboardPage() {
                 🏗️ Platform Architecture
               </h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
-                Overview of what we've built together
+                Overview of what we&apos;ve built together
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

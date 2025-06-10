@@ -1,4 +1,4 @@
-export interface ApiSuccessResponse<T = any> {
+export interface ApiSuccessResponse<T = unknown> {
   success: true;
   data?: T;
   message?: string;
@@ -11,7 +11,7 @@ export interface ApiErrorResponse {
   details?: Record<string, string[]>;
 }
 
-export type ApiResponse<T = any> = ApiSuccessResponse<T> | ApiErrorResponse;
+export type ApiResponse<T = unknown> = ApiSuccessResponse<T> | ApiErrorResponse;
 
 // Helper function to create success responses
 export function createSuccessResponse<T>(
