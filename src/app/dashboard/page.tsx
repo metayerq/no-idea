@@ -11,7 +11,7 @@ export default function DashboardPage() {
   const [stats, setStats] = useState({
     totalUsers: 0,
     lastLogin: new Date().toISOString(),
-    memberSince: session?.user?.createdAt || new Date().toISOString(),
+    memberSince: new Date().toISOString(),
   });
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function DashboardPage() {
     setStats({
       totalUsers: Math.floor(Math.random() * 1000) + 100,
       lastLogin: new Date().toISOString(),
-      memberSince: session?.user?.createdAt || new Date().toISOString(),
+      memberSince: new Date().toISOString(),
     });
   }, [session]);
 
