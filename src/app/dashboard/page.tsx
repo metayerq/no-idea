@@ -3,7 +3,6 @@
 import { useSession } from 'next-auth/react';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/Button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import { useState, useEffect } from 'react';
 
 export default function DashboardPage() {
@@ -57,65 +56,57 @@ export default function DashboardPage() {
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">
-                Total Platform Users
-              </CardTitle>
-              <div className="h-4 w-4 text-muted-foreground">👥</div>
-            </CardHeader>
-            <CardContent>
+          <div className="rounded-lg border bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50">
+            <div className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <h3 className="text-sm font-medium">Total Platform Users</h3>
+              <div className="h-4 w-4">👥</div>
+            </div>
+            <div className="pt-0">
               <div className="text-2xl font-bold">{stats.totalUsers.toLocaleString()}</div>
-              <p className="text-xs text-muted-foreground">
-                +12% from last month
-              </p>
-            </CardContent>
-          </Card>
+              <p className="text-xs text-gray-500">+12% from last month</p>
+            </div>
+          </div>
 
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">
-                Last Login
-              </CardTitle>
-              <div className="h-4 w-4 text-muted-foreground">🕒</div>
-            </CardHeader>
-            <CardContent>
+          <div className="rounded-lg border bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50">
+            <div className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <h3 className="text-sm font-medium">Last Login</h3>
+              <div className="h-4 w-4">🕒</div>
+            </div>
+            <div className="pt-0">
               <div className="text-2xl font-bold">Now</div>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-xs text-gray-500">
                 {new Date(stats.lastLogin).toLocaleDateString()}
               </p>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
 
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">
-                Member Since
-              </CardTitle>
-              <div className="h-4 w-4 text-muted-foreground">📅</div>
-            </CardHeader>
-            <CardContent>
+          <div className="rounded-lg border bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50">
+            <div className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <h3 className="text-sm font-medium">Member Since</h3>
+              <div className="h-4 w-4">📅</div>
+            </div>
+            <div className="pt-0">
               <div className="text-2xl font-bold">
                 {new Date(stats.memberSince).toLocaleDateString()}
               </div>
-              <p className="text-xs text-muted-foreground">
-                Account creation date
-              </p>
-            </CardContent>
-          </Card>
+              <p className="text-xs text-gray-500">Account creation date</p>
+            </div>
+          </div>
         </div>
 
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* User Profile */}
-          <Card>
-            <CardHeader>
-              <CardTitle>👤 Profile Information</CardTitle>
-              <CardDescription>
+          <div className="rounded-lg border bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50">
+            <div className="flex flex-col space-y-1.5 pb-6">
+              <h3 className="text-2xl font-semibold leading-none tracking-tight">
+                👤 Profile Information
+              </h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
                 Your account details and settings
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
+              </p>
+            </div>
+            <div className="space-y-4">
               <div className="space-y-3">
                 <div className="flex justify-between">
                   <span className="font-medium">Name:</span>
@@ -141,20 +132,22 @@ export default function DashboardPage() {
               <Button variant="outline" className="w-full">
                 Edit Profile
               </Button>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
 
           {/* Quick Actions */}
-          <Card>
-            <CardHeader>
-              <CardTitle>⚡ Quick Actions</CardTitle>
-              <CardDescription>
+          <div className="rounded-lg border bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50">
+            <div className="flex flex-col space-y-1.5 pb-6">
+              <h3 className="text-2xl font-semibold leading-none tracking-tight">
+                ⚡ Quick Actions
+              </h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
                 Common tasks and platform features
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-3">
+              </p>
+            </div>
+            <div className="space-y-3">
               <Button className="w-full justify-start" asChild>
-                <a href="/features">🔌 Test API Endpoints</a>
+                <a href="/auth/signin">🔌 Test Authentication</a>
               </Button>
               <Button variant="outline" className="w-full justify-start" asChild>
                 <a href="/api/users" target="_blank">📊 View API Documentation</a>
@@ -175,42 +168,42 @@ export default function DashboardPage() {
                   🚪 Sign Out
                 </Button>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
 
           {/* Platform Features */}
-          <Card className="lg:col-span-2">
-            <CardHeader>
-              <CardTitle>🏗️ Platform Architecture</CardTitle>
-              <CardDescription>
+          <div className="rounded-lg border bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50 lg:col-span-2">
+            <div className="flex flex-col space-y-1.5 pb-6">
+              <h3 className="text-2xl font-semibold leading-none tracking-tight">
+                🏗️ Platform Architecture
+              </h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
                 Overview of what we've built together
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div className="text-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
-                  <div className="text-2xl mb-2">✅</div>
-                  <h4 className="font-semibold">Authentication</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-300">NextAuth.js</p>
-                </div>
-                <div className="text-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                  <div className="text-2xl mb-2">✅</div>
-                  <h4 className="font-semibold">Database</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-300">Neon + Drizzle</p>
-                </div>
-                <div className="text-center p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
-                  <div className="text-2xl mb-2">✅</div>
-                  <h4 className="font-semibold">Validation</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-300">Zod schemas</p>
-                </div>
-                <div className="text-center p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
-                  <div className="text-2xl mb-2">✅</div>
-                  <h4 className="font-semibold">UI/UX</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-300">Tailwind CSS</p>
-                </div>
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="text-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                <div className="text-2xl mb-2">✅</div>
+                <h4 className="font-semibold">Authentication</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">NextAuth.js</p>
               </div>
-            </CardContent>
-          </Card>
+              <div className="text-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                <div className="text-2xl mb-2">✅</div>
+                <h4 className="font-semibold">Database</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Neon + Drizzle</p>
+              </div>
+              <div className="text-center p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                <div className="text-2xl mb-2">✅</div>
+                <h4 className="font-semibold">Validation</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Zod schemas</p>
+              </div>
+              <div className="text-center p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
+                <div className="text-2xl mb-2">✅</div>
+                <h4 className="font-semibold">UI/UX</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Tailwind CSS</p>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     </div>
