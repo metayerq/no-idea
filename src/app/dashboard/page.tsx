@@ -125,8 +125,8 @@ export default function DashboardPage() {
                   <span className="font-mono text-sm">{session.user?.id}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="font-medium">Email Verified:</span>
-                  <span>{session.user?.emailVerified ? '✅ Yes' : '❌ No'}</span>
+                  <span className="font-medium">Account Status:</span>
+                  <span>✅ Active</span>
                 </div>
               </div>
               <Button variant="outline" className="w-full">
